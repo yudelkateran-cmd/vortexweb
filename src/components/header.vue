@@ -21,7 +21,7 @@ import logoVortex from '../assets/vortex.jpeg'
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 1rem 1rem;
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -36,11 +36,11 @@ import logoVortex from '../assets/vortex.jpeg'
 }
 
 .logo-img {
-  height: 150px; /* Subimos de 95px a 130px para que destaque bastante */
+  height: 100px; /* Subimos de 95px a 130px para que destaque bastante */
   width: auto;
   object-fit: contain;
   display: block;
-  transform: scale(1.1);
+ 
 }
 
 .nav-links {
