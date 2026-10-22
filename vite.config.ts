@@ -11,8 +11,8 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
-    base: '/vortexweb/',
   ],
+  base: '/vortexweb/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
