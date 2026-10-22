@@ -11,6 +11,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
+    base: '/vortexweb/',
   ],
   resolve: {
     alias: {
