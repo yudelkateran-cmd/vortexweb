@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import header from './components/header.vue'
-import footer from './components/footer.vue'
+import Header from './components/header.vue'
+import Footer from './components/footer.vue'
 </script>
 
 <template>
@@ -22,7 +22,7 @@ import footer from './components/footer.vue'
             <i class="fa-solid fa-chart-line"></i>
           </div>
           <h3>Cerrando Ventas</h3>
-          <p>Automatización de ventas y atención al cliente.</p>
+          <p>Automatización de Ventas y Atención al Cliente.</p>
         </div>
 
         <!-- Tarjeta 2 -->
@@ -31,7 +31,7 @@ import footer from './components/footer.vue'
             <i class="fa-solid fa-list-check"></i>
           </div>
           <h3>Gestión de Control</h3>
-          <p>Plataforma dinámica 24/7 para tu negocio.</p>
+          <p>Plataforma Dinámica 24/7 para tu Negocio.</p>
         </div>
 
         <!-- Tarjeta 3 -->
@@ -49,7 +49,59 @@ import footer from './components/footer.vue'
             <i class="fa-solid fa-bolt"></i>
           </div>
           <h3>Automatizado</h3>
-          <p>Velocidad superior y seguridad avanzada.</p>
+          <p>Velocidad Superior y Seguridad Avanzada.</p>
+        </div>
+      </section>
+      <!-- Sección de Comparación / Servicios -->
+      <section class="services-comparison">
+        <h2 class="section-title">El Antes y el Después de tu Negocio</h2>
+        
+        <div class="comparison-grid">
+          <!-- Columna: Sin Vortex -->
+          <div class="comparison-card without-vortex">
+            <h3>Sin una Web de Vortex</h3>
+            <ul>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Dependes solo del "boca a boca" o redes sociales.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Tu marca no transmite el verdadero valor de tu trabajo.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Pierdes tiempo respondiendo dudas básicas por chat.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Sitios lentos, desactualizados o propensos a fallas.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna: Con Vortex -->
+          <div class="comparison-card with-vortex">
+            <h3>Con una Web de Vortex</h3>
+            <ul>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Tienes un canal propio que atrae y captura clientes todos los días.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Proyectas una imagen de alto nivel que justifica el valor de tus servicios.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Tu plataforma explica, califica y guía al cliente antes de que hable contigo.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Una infraestructura rápida, moderna y optimizada que no falla.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -166,5 +218,96 @@ body {
 
 .panel:hover .card-icon i {
   color: #ffffff;
+}
+/* --- ESTILOS PARA LA SECCIÓN DE COMPARACIÓN --- */
+.services-comparison {
+  margin: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.comparison-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-5px);
+}
+
+.comparison-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Estilo para la tarjeta "Sin Vortex" (tono sutilmente más sobrio) */
+.without-vortex h3 {
+  color: #c53030; /* Rojo moderado para indicar problema */
+}
+
+.without-vortex i {
+  color: #e53e3e;
+  background-color: rgba(229, 62, 62, 0.1);
+}
+
+/* Estilo para la tarjeta "Con Vortex" (destacada con los colores de tu marca) */
+.with-vortex {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  border: 2px solid #0077b6;
+}
+
+.with-vortex h3 {
+  color: #0b2545; /* Azul corporativo Vortex */
+}
+
+.with-vortex i {
+  color: #0077b6;
+  background-color: rgba(0, 119, 182, 0.1);
+}
+
+.comparison-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.comparison-card li i {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-top: 2px;
 }
 </style>

@@ -18,29 +18,60 @@ import logoVortex from '../assets/vortex.jpeg'
 
 <style scoped>
 .vortex-header {
+  /* Fondo transparente o con sutil efecto glassmorphism 
+  background: rgba(11, 37, 69, 0.15);*/
+  /* Un azul ultra translúcido opcional, o 'transparent' puro 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);*/
+  background: transparent !important;
+  background-color: transparent !important;
+
+  /* Asegúrate de que el texto y los enlaces se vean blancos para destacar sobre la imagen */
+  color: #ffffff;
+  padding: 12px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+
+  /* Borde sutil inferior opcional para separar con elegancia 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);*/
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Si tienes enlaces en el header, asegúrate de que sean blancos */
+.vortex-header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.vortex-header a:hover {
+  color: #8da9c4;
+  /* Tono celeste sutil al pasar el cursor */
 }
 
 .logo-container {
+ background: rgba(11, 37, 69, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-  height: 100px; /* Subimos de 95px a 130px para que destaque bastante */
+  height: 45px;
+  /* Subimos de 95px a 130px para que destaque bastante */
   width: auto;
   object-fit: contain;
   display: block;
- 
+
 }
 
 .nav-links {
@@ -54,6 +85,7 @@ import logoVortex from '../assets/vortex.jpeg'
   color: #1e293b;
   font-weight: 600;
   font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   transition: color 0.2s ease;
 }
 
