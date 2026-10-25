@@ -16,19 +16,38 @@ import footer from './components/footer.vue'
       </section>
 
       <section class="panels-grid">
+        <!-- Tarjeta 1 -->
         <div class="panel">
+          <div class="card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
           <h3>Cerrando Ventas</h3>
           <p>Automatización de ventas y atención al cliente.</p>
         </div>
+
+        <!-- Tarjeta 2 -->
         <div class="panel">
+          <div class="card-icon">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
           <h3>Gestión de Control</h3>
           <p>Plataforma dinámica 24/7 para tu negocio.</p>
         </div>
+
+        <!-- Tarjeta 3 -->
         <div class="panel">
+          <div class="card-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
           <h3>Agendado 24/7</h3>
           <p>Procesos optimizados sin depender de horarios manuales.</p>
         </div>
+
+        <!-- Tarjeta 4 -->
         <div class="panel">
+          <div class="card-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
           <h3>Automatizado</h3>
           <p>Velocidad superior y seguridad avanzada.</p>
         </div>
@@ -47,11 +66,10 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* --- AGREGA ESTAS LÍNEAS PARA EL FONDO --- */
   background-image: url('./assets/image.png');
   background-size: cover;          /* Cubre toda la pantalla */
   background-position: center;     /* Centra la imagen */
-  background-attachment: fixed;    /* El fondo se queda quieto al hacer scroll (opcional, queda muy bien) */
+  background-attachment: fixed;    /* El fondo se queda quieto al hacer scroll */
   background-repeat: no-repeat;    
 }
 
@@ -62,7 +80,7 @@ body {
 }
 
 .hero {
-  /* Fondo azul muy translúcido (solo 25% de opacidad para que sea casi transparente) */
+  /* Fondo azul muy translúcido */
   background: rgba(11, 37, 69, 0.25); 
   
   /* El efecto mágico de vidrio desenfocado */
@@ -75,10 +93,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   
-  /* Borde fino estilo cristal brillante */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  
-  /* Sombra suave para darle profundidad sobre el fondo */
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -99,6 +114,11 @@ body {
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0b2545;
 }
 
 .panels-grid {
@@ -113,8 +133,38 @@ body {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
+.panel:hover {
+  transform: translateY(-5px);
+}
 
+/* --- ESTILOS NUEVOS PARA LOS ÍCONOS --- */
+.card-icon {
+  width: 55px;
+  height: 55px;
+  background-color: rgba(0, 180, 216, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.card-icon i {
+  font-size: 24px;
+  color: #0077b6;
+}
+
+.panel:hover .card-icon {
+  transform: scale(1.1);
+  background-color: #0077b6;
+}
+
+.panel:hover .card-icon i {
+  color: #ffffff;
+}
 </style>
