@@ -11,6 +11,24 @@
         <p>No pagues por una página que solo esté ahí ocupando espacio. Invierte en una plataforma web diseñada para hacer crecer tu negocio.</p>
       </div>
 
+      <!-- Columna de Horarios de Atención -->
+      <div class="footer-section">
+        <h4>Horarios</h4>
+        <ul class="contact-list">
+          <li>
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Lunes a Viernes:</strong><br>
+              <span>9:00 - 18:00 hrs</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-bolt"></i>
+            <span>Respuesta en menos de 2 hrs vía WhatsApp</span>
+          </li>
+        </ul>
+      </div>
+
       <!-- Columna de Contacto -->
       <div class="footer-section">
         <h4>Contacto</h4>
@@ -20,8 +38,10 @@
             <span>160, San Bernardo, Chile, 8071333</span>
           </li>
           <li>
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+56995970968">9 9597 0968</a>
+            <a href="https://wa.me/56995970968?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20los%20servicios%20de%20Vortex" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>9 9597 0968</span>
+            </a>
           </li>
           <li>
             <i class="fa-solid fa-envelope"></i>
@@ -55,15 +75,21 @@
 }
 
 .footer-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr;
+  grid-template-columns: 2fr 1.2fr 1.5fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .footer-content {
     grid-template-columns: 1fr;
   }
@@ -97,14 +123,17 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   color: #cbd5e1;
   font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .contact-list i {
   color: #0077b6;
   margin-top: 3px;
+  font-size: 1rem;
+  min-width: 16px;
 }
 
 .contact-list a {
@@ -116,6 +145,17 @@
 .contact-list a:hover {
   color: #ffffff;
   text-decoration: underline;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsapp-link i {
+  color: #25d366;
+  font-size: 1.1rem;
 }
 
 .facebook-link {

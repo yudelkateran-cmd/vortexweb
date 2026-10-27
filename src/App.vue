@@ -1,6 +1,33 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import Header from './components/header.vue'
 import Footer from './components/footer.vue'
+
+// Estado para controlar qué pregunta del FAQ está abierta
+const activeFaq = ref<number | null>(null)
+
+const toggleFaq = (index: number) => {
+  activeFaq.value = activeFaq.value === index ? null : index
+}
+
+const faqList = [
+  {
+    question: '¿Cuánto tiempo toma tener mi página web de Vortex lista?',
+    answer: 'El tiempo promedio de desarrollo y entrega es de 5 a 10 días hábiles, dependiendo de la complejidad y el plan seleccionado, asegurando siempre una calidad profesional y optimizada.'
+  },
+  {
+    question: '¿Necesito conocimientos técnicos avanzados para administrarla?',
+    answer: 'Para nada. Diseñamos plataformas intuitivas y fáciles de usar. Además, te entregamos el sitio listo y te orientamos para que puedas gestionarlo sin complicaciones.'
+  },
+  {
+    question: '¿La página web incluye el dominio y el hosting?',
+    answer: 'Te asesoramos en la adquisición de tu dominio personalizado y la configuración del mejor hosting para que tu sitio web tenga una velocidad superior y seguridad avanzada 24/7.'
+  },
+  {
+    question: '¿Los sitios web están optimizados para celulares y tablets?',
+    answer: 'Sí, absolutamente todos nuestros desarrollos cuentan con diseño 100% responsivo, garantizando una experiencia de navegación perfecta en smartphones, tablets y computadores.'
+  }
+]
 </script>
 
 <template>
@@ -52,6 +79,7 @@ import Footer from './components/footer.vue'
           <p>Velocidad Superior y Seguridad Avanzada.</p>
         </div>
       </section>
+
       <!-- Sección de Comparación / Servicios -->
       <section class="services-comparison">
         <h2 class="section-title">El Antes y el Después de tu Negocio</h2>
@@ -104,6 +132,75 @@ import Footer from './components/footer.vue'
           </div>
         </div>
       </section>
+
+      <!-- --- NUEVA SECCIÓN: INSIGNIAS, TECNOLOGÍAS Y GARANTÍAS --- -->
+      <section class="trust-section">
+        <h2 class="section-title">Respaldado por Tecnología de Vanguardia</h2>
+        <p class="trust-subtitle">Construido bajo los más altos estándares de rendimiento y seguridad</p>
+
+        <div class="trust-grid">
+          <!-- Insignia 1: Rendimiento -->
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3>Alto Rendimiento</h3>
+            <p>Velocidad de carga optimizada para retener visitantes y mejorar conversiones.</p>
+          </div>
+
+          <!-- Insignia 2: Seguridad SSL -->
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Sitio 100% Seguro</h3>
+            <p>Certificados SSL y protección avanzada de datos integrada en cada proyecto.</p>
+          </div>
+
+          <!-- Insignia 3: Stack Tecnológico -->
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Stack Moderno</h3>
+            <p>Desarrollado con tecnologías líderes como <strong>Vue 3</strong>, <strong>Vite</strong> y <strong>TypeScript</strong>.</p>
+          </div>
+
+          <!-- Insignia 4: Adaptabilidad -->
+          <div class="trust-card">
+            <div class="trust-icon">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3>Diseño Responsivo</h3>
+            <p>Experiencia de usuario impecable en celulares, tablets y computadores.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Preguntas Frecuentes (FAQ) -->
+      <section class="faq-section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="faq-subtitle">Resolvemos las dudas más comunes para que tomes la mejor decisión</p>
+
+        <div class="faq-container">
+          <div 
+            v-for="(item, index) in faqList" 
+            :key="index" 
+            class="faq-item"
+            :class="{ active: activeFaq === index }"
+          >
+            <button class="faq-question" @click="toggleFaq(index)">
+              <span>{{ item.question }}</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer">
+                <p>{{ item.answer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Pie de página -->
@@ -119,9 +216,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   background-image: url('./assets/image.png');
-  background-size: cover;          /* Cubre toda la pantalla */
-  background-position: center;     /* Centra la imagen */
-  background-attachment: fixed;    /* El fondo se queda quieto al hacer scroll */
+  background-size: cover;          
+  background-position: center;     
+  background-attachment: fixed;    
   background-repeat: no-repeat;    
 }
 
@@ -132,19 +229,14 @@ body {
 }
 
 .hero {
-  /* Fondo azul muy translúcido */
   background: rgba(11, 37, 69, 0.25); 
-  
-  /* El efecto mágico de vidrio desenfocado */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  
   color: #ffffff;
   padding: 50px 20px;
   border-radius: 16px;
   text-align: center;
   margin-bottom: 40px;
-  
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
@@ -193,7 +285,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* --- ESTILOS NUEVOS PARA LOS ÍCONOS --- */
 .card-icon {
   width: 55px;
   height: 55px;
@@ -219,7 +310,7 @@ body {
 .panel:hover .card-icon i {
   color: #ffffff;
 }
-/* --- ESTILOS PARA LA SECCIÓN DE COMPARACIÓN --- */
+
 .services-comparison {
   margin: 60px 0;
 }
@@ -258,9 +349,8 @@ body {
   border-bottom: 2px solid #e2e8f0;
 }
 
-/* Estilo para la tarjeta "Sin Vortex" (tono sutilmente más sobrio) */
 .without-vortex h3 {
-  color: #c53030; /* Rojo moderado para indicar problema */
+  color: #c53030; 
 }
 
 .without-vortex i {
@@ -268,14 +358,13 @@ body {
   background-color: rgba(229, 62, 62, 0.1);
 }
 
-/* Estilo para la tarjeta "Con Vortex" (destacada con los colores de tu marca) */
 .with-vortex {
   background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
   border: 2px solid #0077b6;
 }
 
 .with-vortex h3 {
-  color: #0b2545; /* Azul corporativo Vortex */
+  color: #0b2545; 
 }
 
 .with-vortex i {
@@ -309,5 +398,151 @@ body {
   justify-content: center;
   font-size: 13px;
   margin-top: 2px;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN DE INSIGNIAS Y TECNOLOGÍAS --- */
+.trust-section {
+  margin: 60px 0;
+}
+
+.trust-subtitle {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.trust-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.trust-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 119, 182, 0.1);
+  color: #0077b6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 15px auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.trust-card:hover .trust-icon {
+  background-color: #0077b6;
+  color: #ffffff;
+}
+
+.trust-card h3 {
+  font-size: 1.15rem;
+  color: #0b2545;
+  margin-bottom: 10px;
+}
+
+.trust-card p {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Estilos de la sección FAQ */
+.faq-section {
+  margin: 60px 0;
+}
+
+.faq-subtitle {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 25px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0b2545;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 15px;
+}
+
+.faq-icon {
+  color: #0077b6;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.active .faq-answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  padding: 0 25px 20px 25px;
+  margin: 0;
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 </style>
