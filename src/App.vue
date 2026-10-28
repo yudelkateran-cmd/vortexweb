@@ -45,8 +45,8 @@ const faqList = [
       <section class="panels-grid">
         <!-- Tarjeta 1 -->
         <div class="panel">
-          <div class="card-icon">
-            <i class="fa-solid fa-chart-line"></i>
+          <div class="card-image-container">
+            <img src="./assets/cerrandoventas.jpg" alt="Cerrando Ventas" />
           </div>
           <h3>Cerrando Ventas</h3>
           <p>Automatización de Ventas y Atención al Cliente.</p>
@@ -54,8 +54,8 @@ const faqList = [
 
         <!-- Tarjeta 2 -->
         <div class="panel">
-          <div class="card-icon">
-            <i class="fa-solid fa-list-check"></i>
+          <div class="card-image-container">
+            <img src="./assets/gestioncontrol.jpeg" alt="Gestión de Control" />
           </div>
           <h3>Gestión de Control</h3>
           <p>Plataforma Dinámica 24/7 para tu Negocio.</p>
@@ -63,8 +63,8 @@ const faqList = [
 
         <!-- Tarjeta 3 -->
         <div class="panel">
-          <div class="card-icon">
-            <i class="fa-solid fa-calendar-check"></i>
+          <div class="card-image-container">
+            <img src="./assets/calendario.jpeg" alt="Agendado 24/7" />
           </div>
           <h3>Agendado 24/7</h3>
           <p>Procesos optimizados sin depender de horarios manuales.</p>
@@ -72,8 +72,8 @@ const faqList = [
 
         <!-- Tarjeta 4 -->
         <div class="panel">
-          <div class="card-icon">
-            <i class="fa-solid fa-bolt"></i>
+          <div class="card-image-container">
+            <img src="./assets/automatizado.jpeg" alt="Automatizado" />
           </div>
           <h3>Automatizado</h3>
           <p>Velocidad Superior y Seguridad Avanzada.</p>
@@ -133,7 +133,7 @@ const faqList = [
         </div>
       </section>
 
-      <!-- --- NUEVA SECCIÓN: INSIGNIAS, TECNOLOGÍAS Y GARANTÍAS --- -->
+      <!-- --- SECCIÓN: INSIGNIAS, TECNOLOGÍAS Y GARANTÍAS --- -->
       <section class="trust-section">
         <h2 class="section-title">Respaldado por Tecnología de Vanguardia</h2>
         <p class="trust-subtitle">Construido bajo los más altos estándares de rendimiento y seguridad</p>
@@ -201,6 +201,31 @@ const faqList = [
           </div>
         </div>
       </section>
+      <!-- --- NUEVA SECCIÓN: FILOSOFÍA Y COMPROMISO (Ideal para público exigente) --- -->
+      <section class="philosophy-section">
+        <h2 class="section-title">Nuestra Promesa de Excelencia</h2>
+        <p class="philosophy-subtitle">Rigor técnico y cumplimiento absoluto en cada etapa de desarrollo</p>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-number">01</div>
+            <h3>Puntualidad Estricta</h3>
+            <p>Entregas rigurosas en los plazos acordados, respetando el tiempo de tu negocio sin excepciones.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-number">02</div>
+            <h3>Soporte Dedicado</h3>
+            <p>Acompañamiento continuo y atención personalizada para garantizar el funcionamiento impecable de tu plataforma.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-number">03</div>
+            <h3>Precisión Milimétrica</h3>
+            <p>Código limpio, optimizado y diseñado bajo los más altos estándares de calidad estética y funcional.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Pie de página -->
@@ -209,12 +234,11 @@ const faqList = [
 </template>
 
 <style>
-/* Estilos globales para quitar márgenes por defecto de la página */
+/* Estilos globales */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
   background-image: url('./assets/image.png');
   background-size: cover;          
   background-position: center;     
@@ -265,52 +289,68 @@ body {
   background-color: #0b2545;
 }
 
+/* --- ESTILOS REFINADOS PARA LOS PANELES E IMÁGENES --- */
 .panels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
 }
 
 .panel {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 20px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.90); /* Blanco ligeramente más translúcido y elegante */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 24px 20px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra difusa y sofisticada estilo minimalista */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .panel:hover {
   transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 119, 182, 0.3);
 }
 
-.card-icon {
-  width: 55px;
-  height: 55px;
-  background-color: rgba(0, 180, 216, 0.1);
-  border-radius: 50%;
+.card-image-container {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 15px auto;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  background: transparent; /* Sin fondo sólido pesado, para dar ligereza visual */
 }
 
-.card-icon i {
-  font-size: 24px;
-  color: #0077b6;
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Muestra la ilustración completa sin cortes feos */
+  transition: transform 0.4s ease;
 }
 
-.panel:hover .card-icon {
-  transform: scale(1.1);
-  background-color: #0077b6;
+.panel:hover .card-image-container img {
+  transform: scale(1.04); /* Zoom sutil y refinado */
 }
 
-.panel:hover .card-icon i {
-  color: #ffffff;
+.panel h3 {
+  color: #0b2545;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
+.panel p {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Sección de Comparación */
 .services-comparison {
   margin: 60px 0;
 }
@@ -400,7 +440,7 @@ body {
   margin-top: 2px;
 }
 
-/* --- ESTILOS PARA LA SECCIÓN DE INSIGNIAS Y TECNOLOGÍAS --- */
+/* Sección de Insignias y Tecnologías */
 .trust-section {
   margin: 60px 0;
 }
@@ -467,7 +507,7 @@ body {
   margin: 0;
 }
 
-/* Estilos de la sección FAQ */
+/* Sección FAQ */
 .faq-section {
   margin: 60px 0;
 }
@@ -544,5 +584,63 @@ body {
   color: #475569;
   font-size: 0.98rem;
   line-height: 1.6;
+}
+/* --- ESTILOS PARA LA SECCIÓN DE FILOSOFÍA Y COMPROMISO --- */
+.philosophy-section {
+  margin: 60px 0;
+}
+
+.philosophy-subtitle {
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 119, 182, 0.3);
+}
+
+.philosophy-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(0, 119, 182, 0.15);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.philosophy-card h3 {
+  font-size: 1.2rem;
+  color: #0b2545;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.philosophy-card p {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
 }
 </style>
