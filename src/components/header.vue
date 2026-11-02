@@ -18,60 +18,41 @@ import logoVortex from '../assets/vortex.jpeg'
 
 <style scoped>
 .vortex-header {
-  /* Fondo transparente o con sutil efecto glassmorphism 
-  background: rgba(11, 37, 69, 0.15);*/
-  /* Un azul ultra translúcido opcional, o 'transparent' puro 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);*/
-  background: transparent !important;
-  background-color: transparent !important;
-
-  /* Asegúrate de que el texto y los enlaces se vean blancos para destacar sobre la imagen */
+  /* Efecto Glassmorphism moderno y elegante */
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  
   color: #ffffff;
-  padding: 12px 30px;
+  padding: 12px 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* Borde sutil inferior opcional para separar con elegancia 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);*/
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-/* Si tienes enlaces en el header, asegúrate de que sean blancos */
-.vortex-header a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.vortex-header a:hover {
-  color: #8da9c4;
-  /* Tono celeste sutil al pasar el cursor */
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 2rem;
 }
 
 .logo-container {
- background: rgba(11, 37, 69, 0.4);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 8px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo-img {
-  height: 45px;
-  /* Subimos de 95px a 130px para que destaque bastante */
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
-
 }
 
 .nav-links {
@@ -80,32 +61,47 @@ import logoVortex from '../assets/vortex.jpeg'
   align-items: center;
 }
 
+/* Enlaces del menú con texto blanco impecable */
 .nav-links a {
   text-decoration: none;
-  color: #1e293b;
+  color: #ffffff;
   font-weight: 600;
-  font-size: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #00b4d8;
+  color: #38bdf8;
 }
 
+/* Botón especial de Contacto en el menú */
 .btn-nav {
-  background-color: #0b2545;
+  background-color: #0ea5e9;
   color: #ffffff !important;
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
   font-weight: 700 !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 2px 8px rgba(11, 37, 69, 0.2);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
 .btn-nav:hover {
-  background-color: #00b4d8;
-  color: #0b2545 !important;
-  transform: translateY(-1px);
+  background-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+  .vortex-header {
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 </style>

@@ -37,7 +37,8 @@ const faqList = [
 
     <!-- Contenido Principal -->
     <main class="main-content">
-      <section class="hero">
+      <!-- 1. SECCIÓN INICIO -->
+      <section id="inicio" class="hero">
         <h2>Impulsa tu negocio al siguiente nivel con una página web que genera resultados</h2>
         <p class="hero-subtitle">En Vortex Web diseñamos y desarrollamos sitios web modernos, rápidos y optimizados para
           convertir visitantes en clientes fieles.</p>
@@ -69,12 +70,12 @@ const faqList = [
             mejor experiencia de usuario.</p>
         </div>
 
-        <!-- Tarjeta 3: Enfoque en Ventas (SEO y Conversión) -->
+        <!-- Tarjeta 3: Enfoque en Ventas -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/calendario.jpeg" alt="Enfoque en Ventas" />
+            <img src="./assets/enfoque.jpeg" alt="Enfoque en Ventas" />
           </div>
-          <h3>Enfoque en Ventas</h3>
+          <h3>Estrategia Comercial</h3>
           <p>Estructuras pensadas estratégicamente para aparecer en Google y guiar al usuario de la mano hacia la compra
             o contratación.</p>
         </div>
@@ -82,16 +83,16 @@ const faqList = [
         <!-- Tarjeta 4: Soporte y Acompañamiento -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/automatizado.jpeg" alt="Soporte y Acompañamiento" />
+            <img src="./assets/soporte.jpeg" alt="Soporte y Acompañamiento" />
           </div>
-          <h3>Soporte y Acompañamiento</h3>
+          <h3>Soporte Técnico</h3>
           <p>No te dejamos solo tras la entrega; te enseñamos a usar tu web y te apoyamos ante cualquier duda o
             actualización.</p>
         </div>
       </section>
 
-      <!-- Sección de Comparación / Servicios -->
-      <section class="services-comparison">
+      <!-- 2. SECCIÓN ¿POR QUÉ VORTEX? (Comparativa) -->
+      <section id="comparativa" class="services-comparison">
         <h2 class="section-title">El Antes y el Después de tu Negocio</h2>
 
         <div class="comparison-grid">
@@ -174,7 +175,8 @@ const faqList = [
             </div>
             <h3>Stack Moderno</h3>
             <p>Desarrollado con tecnologías líderes como <strong>Vue 3</strong>, <strong>Vite</strong> y
-              <strong>TypeScript</strong>.</p>
+              <strong>TypeScript</strong>.
+            </p>
           </div>
 
           <!-- Insignia 4: Adaptabilidad -->
@@ -184,6 +186,44 @@ const faqList = [
             </div>
             <h3>Diseño Responsivo</h3>
             <p>Experiencia de usuario impecable en celulares, tablets y computadores.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SECCIÓN DE SERVICIOS -->
+      <section id="servicios" class="services-section">
+        <div class="services-header">
+          <span class="badge-subtitle">NUESTRAS SOLUCIONES</span>
+          <h2>Nuestros Servicios</h2>
+          <p>Soluciones digitales diseñadas con precisión para llevar tu negocio al siguiente nivel de conversión y rentabilidad.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Servicio 1 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3>Desarrollo Web Profesional</h3>
+            <p>Sitios corporativos, landing pages y blogs estructurados con alto rendimiento, velocidad óptima y total seguridad para tu marca.</p>
+          </div>
+
+          <!-- Servicio 2 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h3>Tiendas Online (E-commerce)</h3>
+            <p>Tu negocio abierto 24/7. Configuramos pasarelas de pago seguras, catálogos eficientes y carritos diseñados para vender más.</p>
+          </div>
+
+          <!-- Servicio 3 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <h3>Rediseño y Mantenimiento Web</h3>
+            <p>¿Tu web actual se ve anticuada o es lenta? La renovamos por completo, mejorando su estética, velocidad y actualizándola de forma constante.</p>
           </div>
         </div>
       </section>
@@ -207,7 +247,8 @@ const faqList = [
           </div>
         </div>
       </section>
-      <!-- --- NUEVA SECCIÓN: FILOSOFÍA Y COMPROMISO (Ideal para público exigente) --- -->
+
+      <!-- SECCIÓN: FILOSOFÍA Y COMPROMISO -->
       <section class="philosophy-section">
         <h2 class="section-title">Nuestra Promesa de Excelencia</h2>
         <p class="philosophy-subtitle">Rigor técnico y cumplimiento absoluto en cada etapa de desarrollo</p>
@@ -235,8 +276,8 @@ const faqList = [
       </section>
     </main>
 
-    <!-- Pie de página -->
-    <Footer />
+    <!-- 4. SECCIÓN CONTACTO (Pie de página con ID para el menú) -->
+    <Footer id="contacto" />
   </div>
 </template>
 
@@ -305,13 +346,11 @@ body {
 
 .panel {
   background: rgba(255, 255, 255, 0.90);
-  /* Blanco ligeramente más translúcido y elegante */
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 24px 20px;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  /* Sombra difusa y sofisticada estilo minimalista */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -331,20 +370,17 @@ body {
   align-items: center;
   justify-content: center;
   background: transparent;
-  /* Sin fondo sólido pesado, para dar ligereza visual */
 }
 
 .card-image-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Muestra la ilustración completa sin cortes feos */
   transition: transform 0.4s ease;
 }
 
 .panel:hover .card-image-container img {
   transform: scale(1.04);
-  /* Zoom sutil y refinado */
 }
 
 .panel h3 {
@@ -522,6 +558,7 @@ body {
 /* Sección FAQ */
 .faq-section {
   margin: 60px 0;
+  padding-top: 20px;
 }
 
 .faq-subtitle {
@@ -656,4 +693,112 @@ body {
   line-height: 1.6;
   margin: 0;
 }
+
+/* =========================================
+   ESTILOS OPTIMIZADOS - SECCIÓN DE SERVICIOS
+   ========================================= */
+
+.services-section {
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  position: relative;
+  z-index: 1;
+  margin: 60px 0;
+  border-radius: 16px;
+}
+
+.services-header {
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.badge-subtitle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.service-card {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.service-card h3 {
+  color: #ffffff !important;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: #e2e8f0 !important;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.service-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #38bdf8;
+  margin-bottom: 22px;
+}
 </style>
+

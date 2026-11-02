@@ -53,9 +53,14 @@
       <!-- Columna de Redes Sociales -->
       <div class="footer-section">
         <h4>Síguenos</h4>
-        <a href="https://www.facebook.com/profile.php?id=61595730183082" target="_blank" rel="noopener noreferrer" class="facebook-link">
-          <i class="fa-brands fa-facebook"></i> Facebook
-        </a>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61595730183082" target="_blank" rel="noopener noreferrer" class="social-link facebook-link">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/vortex-digital-control-spa/" target="_blank" rel="noopener noreferrer" class="social-link linkedin-link">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
       </div>
     </div>
     
@@ -158,7 +163,13 @@
   font-size: 1.1rem;
 }
 
-.facebook-link {
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -173,7 +184,12 @@
   color: #1877f2;
 }
 
-.facebook-link:hover {
+.linkedin-link i {
+  font-size: 1.2rem;
+  color: #0a66c2;
+}
+
+.social-link:hover {
   color: #ffffff;
 }
 
