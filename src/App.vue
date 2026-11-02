@@ -38,52 +38,62 @@ const faqList = [
     <!-- Contenido Principal -->
     <main class="main-content">
       <section class="hero">
-        <h2>Tu página web con Vortex no es un folleto digital, es el vendedor estrella y el centro de control de tu negocio 24/7.</h2>
-        <button class="cta-button">¡COMIENZA HOY MISMO!</button>
+        <h2>Impulsa tu negocio al siguiente nivel con una página web que genera resultados</h2>
+        <p class="hero-subtitle">En Vortex Web diseñamos y desarrollamos sitios web modernos, rápidos y optimizados para
+          convertir visitantes en clientes fieles.</p>
+
+        <a href="https://wa.me/56995970968?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20los%20servicios%20de%20Vortex"
+          target="_blank" rel="noopener noreferrer" class="cta-button whatsapp-link">
+          <i class="fa-brands fa-whatsapp"></i> Hablemos por WhatsApp
+        </a>
       </section>
 
       <section class="panels-grid">
-        <!-- Tarjeta 1 -->
+        <!-- Tarjeta 1: Diseño 100% Personalizado -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/cerrandoventas.jpg" alt="Cerrando Ventas" />
+            <img src="./assets/personalizado.jpg" alt="Diseño 100% Personalizado" />
           </div>
-          <h3>Cerrando Ventas</h3>
-          <p>Automatización de Ventas y Atención al Cliente.</p>
+          <h3>Diseño 100% Personalizado</h3>
+          <p>No usamos plantillas aburridas. Creamos una identidad visual única que refleja la esencia de tu marca y
+            conecta con tu audiencia.</p>
         </div>
 
-        <!-- Tarjeta 2 -->
+        <!-- Tarjeta 2: Optimización y Velocidad -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/gestioncontrol.jpeg" alt="Gestión de Control" />
+            <img src="./assets/optimizacion.jpeg" alt="Optimización y Velocidad" />
           </div>
-          <h3>Gestión de Control</h3>
-          <p>Plataforma Dinámica 24/7 para tu Negocio.</p>
+          <h3>Optimización y Velocidad</h3>
+          <p>Sitios web ultrarrápidos y adaptados perfectamente a celulares, tablets y computadoras para garantizar la
+            mejor experiencia de usuario.</p>
         </div>
 
-        <!-- Tarjeta 3 -->
+        <!-- Tarjeta 3: Enfoque en Ventas (SEO y Conversión) -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/calendario.jpeg" alt="Agendado 24/7" />
+            <img src="./assets/calendario.jpeg" alt="Enfoque en Ventas" />
           </div>
-          <h3>Agendado 24/7</h3>
-          <p>Procesos optimizados sin depender de horarios manuales.</p>
+          <h3>Enfoque en Ventas</h3>
+          <p>Estructuras pensadas estratégicamente para aparecer en Google y guiar al usuario de la mano hacia la compra
+            o contratación.</p>
         </div>
 
-        <!-- Tarjeta 4 -->
+        <!-- Tarjeta 4: Soporte y Acompañamiento -->
         <div class="panel">
           <div class="card-image-container">
-            <img src="./assets/automatizado.jpeg" alt="Automatizado" />
+            <img src="./assets/automatizado.jpeg" alt="Soporte y Acompañamiento" />
           </div>
-          <h3>Automatizado</h3>
-          <p>Velocidad Superior y Seguridad Avanzada.</p>
+          <h3>Soporte y Acompañamiento</h3>
+          <p>No te dejamos solo tras la entrega; te enseñamos a usar tu web y te apoyamos ante cualquier duda o
+            actualización.</p>
         </div>
       </section>
 
       <!-- Sección de Comparación / Servicios -->
       <section class="services-comparison">
         <h2 class="section-title">El Antes y el Después de tu Negocio</h2>
-        
+
         <div class="comparison-grid">
           <!-- Columna: Sin Vortex -->
           <div class="comparison-card without-vortex">
@@ -163,7 +173,8 @@ const faqList = [
               <i class="fa-solid fa-code"></i>
             </div>
             <h3>Stack Moderno</h3>
-            <p>Desarrollado con tecnologías líderes como <strong>Vue 3</strong>, <strong>Vite</strong> y <strong>TypeScript</strong>.</p>
+            <p>Desarrollado con tecnologías líderes como <strong>Vue 3</strong>, <strong>Vite</strong> y
+              <strong>TypeScript</strong>.</p>
           </div>
 
           <!-- Insignia 4: Adaptabilidad -->
@@ -183,12 +194,7 @@ const faqList = [
         <p class="faq-subtitle">Resolvemos las dudas más comunes para que tomes la mejor decisión</p>
 
         <div class="faq-container">
-          <div 
-            v-for="(item, index) in faqList" 
-            :key="index" 
-            class="faq-item"
-            :class="{ active: activeFaq === index }"
-          >
+          <div v-for="(item, index) in faqList" :key="index" class="faq-item" :class="{ active: activeFaq === index }">
             <button class="faq-question" @click="toggleFaq(index)">
               <span>{{ item.question }}</span>
               <i class="fa-solid fa-chevron-down faq-icon"></i>
@@ -216,7 +222,8 @@ const faqList = [
           <div class="philosophy-card">
             <div class="philosophy-number">02</div>
             <h3>Soporte Dedicado</h3>
-            <p>Acompañamiento continuo y atención personalizada para garantizar el funcionamiento impecable de tu plataforma.</p>
+            <p>Acompañamiento continuo y atención personalizada para garantizar el funcionamiento impecable de tu
+              plataforma.</p>
           </div>
 
           <div class="philosophy-card">
@@ -240,10 +247,10 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-image: url('./assets/image.png');
-  background-size: cover;          
-  background-position: center;     
-  background-attachment: fixed;    
-  background-repeat: no-repeat;    
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .main-content {
@@ -253,7 +260,7 @@ body {
 }
 
 .hero {
-  background: rgba(11, 37, 69, 0.25); 
+  background: rgba(11, 37, 69, 0.25);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: #ffffff;
@@ -297,12 +304,14 @@ body {
 }
 
 .panel {
-  background: rgba(255, 255, 255, 0.90); /* Blanco ligeramente más translúcido y elegante */
+  background: rgba(255, 255, 255, 0.90);
+  /* Blanco ligeramente más translúcido y elegante */
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 24px 20px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra difusa y sofisticada estilo minimalista */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* Sombra difusa y sofisticada estilo minimalista */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -321,18 +330,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent; /* Sin fondo sólido pesado, para dar ligereza visual */
+  background: transparent;
+  /* Sin fondo sólido pesado, para dar ligereza visual */
 }
 
 .card-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Muestra la ilustración completa sin cortes feos */
+  object-fit: contain;
+  /* Muestra la ilustración completa sin cortes feos */
   transition: transform 0.4s ease;
 }
 
 .panel:hover .card-image-container img {
-  transform: scale(1.04); /* Zoom sutil y refinado */
+  transform: scale(1.04);
+  /* Zoom sutil y refinado */
 }
 
 .panel h3 {
@@ -390,7 +402,7 @@ body {
 }
 
 .without-vortex h3 {
-  color: #c53030; 
+  color: #c53030;
 }
 
 .without-vortex i {
@@ -404,7 +416,7 @@ body {
 }
 
 .with-vortex h3 {
-  color: #0b2545; 
+  color: #0b2545;
 }
 
 .with-vortex i {
@@ -585,6 +597,7 @@ body {
   font-size: 0.98rem;
   line-height: 1.6;
 }
+
 /* --- ESTILOS PARA LA SECCIÓN DE FILOSOFÍA Y COMPROMISO --- */
 .philosophy-section {
   margin: 60px 0;
