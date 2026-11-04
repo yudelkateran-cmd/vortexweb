@@ -35,7 +35,7 @@
         <ul class="contact-list">
           <li>
             <i class="fa-solid fa-location-dot"></i>
-            <span>160, San Bernardo, Chile, 8071333</span>
+            <span>Santiago, Chile, 8071333</span>
           </li>
           <li>
             <a href="https://wa.me/56995970968?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20los%20servicios%20de%20Vortex" target="_blank" rel="noopener noreferrer" class="whatsapp-link">

@@ -274,7 +274,83 @@ const faqList = [
           </div>
         </div>
       </section>
+
+      <!-- SECCIÓN: INFORMACIÓN LEGAL Y TÉRMINOS -->
+       
+      <!-- SECCIÓN: INFORMACIÓN LEGAL Y TÉRMINOS -->
+      <section id="terminos" class="legal-section">
+        <div class="legal-header">
+          <span class="badge-subtitle">TRANSPARENCIA Y CONFIANZA</span>
+          <h2>Información Legal del Sitio</h2>
+          <p class="legal-subtitle">Términos, condiciones de uso y directrices de privacidad de Vortex Web.</p>
+        </div>
+
+        <div class="legal-card-container">
+          <!-- Aviso Provisional -->
+          <div class="legal-provisional-banner">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div>
+              <strong>Aviso de Prototipo:</strong> Los siguientes apartados contienen directrices preliminares para la revisión y desarrollo del servicio, y serán validados formalmente antes de su publicación definitiva.
+            </div>
+          </div>
+
+          <!-- Grid o lista estructurada de puntos -->
+          <div class="legal-grid">
+            
+            <div class="legal-item">
+              <div class="legal-number">01</div>
+              <div class="legal-text">
+                <h3>Identificación y Contacto</h3>
+                <p>Sitio operado por <strong>VORTEX DIGITAL & CONTROL SpA</strong>, RUT <strong>78.425.072-5</strong>, con domicilio en Santiago, Chile.</p>
+                <p class="legal-detail"><i class="fa-solid fa-envelope"></i> camilito24520@gmail.com | <i class="fa-brands fa-whatsapp"></i> +56 9 9597 0968</p>
+              </div>
+            </div>
+
+            <div class="legal-item">
+              <div class="legal-number">02</div>
+              <div class="legal-text">
+                <h3>Uso y Alcance de los Servicios</h3>
+                <p>Canal informativo y de captación de cotizaciones. La contratación de servicios de desarrollo y diseño web se formaliza mediante propuestas comerciales o presupuestos específicos acordados con el cliente.</p>
+              </div>
+            </div>
+
+            <div class="legal-item">
+              <div class="legal-number">03</div>
+              <div class="legal-text">
+                <h3>Datos Personales y Privacidad</h3>
+                <p>La información recopilada a través de formularios o canales de contacto se utiliza exclusivamente para responder solicitudes, cotizaciones y coordinar proyectos, garantizando la confidencialidad.</p>
+              </div>
+            </div>
+
+            <div class="legal-item">
+              <div class="legal-number">04</div>
+              <div class="legal-text">
+                <h3>Proveedores y Seguridad</h3>
+                <p>Infraestructura tecnológica optimizada bajo estándares modernos de desarrollo (Vue 3, Vite, TypeScript) y protocolos de seguridad SSL para proteger la navegación de los usuarios.</p>
+              </div>
+            </div>
+
+            <div class="legal-item">
+              <div class="legal-number">05</div>
+              <div class="legal-text">
+                <h3>Derechos del Usuario</h3>
+                <p>Los usuarios pueden solicitar en cualquier momento la revisión, actualización o eliminación de sus datos de contacto escribiendo a nuestro correo oficial.</p>
+              </div>
+            </div>
+
+            <div class="legal-item">
+              <div class="legal-number">06</div>
+              <div class="legal-text">
+                <h3>Cookies y Actualizaciones</h3>
+                <p>El sitio utiliza tecnologías estándar de rendimiento web. Las presentes condiciones podrán ser actualizadas para su adecuación normativa continua.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </main>
+    
 
     <!-- 4. SECCIÓN CONTACTO (Pie de página con ID para el menú) -->
     <Footer id="contacto" />
@@ -800,5 +876,135 @@ body {
   color: #38bdf8;
   margin-bottom: 22px;
 }
-</style>
 
+/* =========================================
+   ESTILOS - SECCIÓN INFORMACIÓN LEGAL MEJORADA
+   ========================================= */
+
+.legal-section {
+  margin: 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.legal-subtitle {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.legal-card-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.legal-provisional-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: rgba(234, 179, 8, 0.15);
+  border-left: 4px solid #eab308;
+  color: #854d0e;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.legal-provisional-banner i {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+/* Cuadrícula de 2 columnas para organizar los puntos perfectamente */
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.legal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.legal-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.legal-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #024062;
+  background: rgba(0, 119, 182, 0.1);
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legal-text h3 {
+  color: #0b2545;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.legal-text p {
+  color: #475569;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0 0 6px 0;
+}
+
+.legal-detail {
+  font-size: 0.82rem !important;
+  color: #64748b !important;
+  font-weight: 500;
+}
+
+.legal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.legal-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.badge-subtitle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #206c8c;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-bottom: 12px; /* Separa perfectamente la pastilla del título principal */
+}
+</style>
