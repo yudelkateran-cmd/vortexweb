@@ -310,7 +310,7 @@ const faqList = [
               <div class="legal-number">02</div>
               <div class="legal-text">
                 <h3>Uso y Alcance de los Servicios</h3>
-                <p>Canal informativo y de captación de cotizaciones. La contratación de servicios de desarrollo y diseño web se formaliza mediante propuestas comerciales o presupuestos específicos acordados con el cliente.</p>
+                <p>Canal informativo y de captación de requerimientos. Los servicios publicados no generan transacciones automáticas en línea; su contratación se formaliza mediante la aceptación previa de propuestas comerciales o presupuestos específicos acordados con el cliente.</p>
               </div>
             </div>
 
@@ -318,7 +318,7 @@ const faqList = [
               <div class="legal-number">03</div>
               <div class="legal-text">
                 <h3>Datos Personales y Privacidad</h3>
-                <p>La información recopilada a través de formularios o canales de contacto se utiliza exclusivamente para responder solicitudes, cotizaciones y coordinar proyectos, garantizando la confidencialidad.</p>
+                <p>La información recopilada a través de formularios o canales de contacto (como nombre, correo o teléfono) se utiliza exclusivamente para responder solicitudes, cotizaciones y coordinar proyectos, garantizando absoluta confidencialidad.</p>
               </div>
             </div>
 
@@ -334,7 +334,7 @@ const faqList = [
               <div class="legal-number">05</div>
               <div class="legal-text">
                 <h3>Derechos del Usuario</h3>
-                <p>Los usuarios pueden solicitar en cualquier momento la revisión, actualización o eliminación de sus datos de contacto escribiendo a nuestro correo oficial.</p>
+                <p>Los usuarios pueden solicitar en cualquier momento la revisión, actualización o eliminación de sus datos de contacto escribiendo directamente a nuestro correo oficial.</p>
               </div>
             </div>
 
@@ -342,7 +342,7 @@ const faqList = [
               <div class="legal-number">06</div>
               <div class="legal-text">
                 <h3>Cookies y Actualizaciones</h3>
-                <p>El sitio utiliza tecnologías estándar de rendimiento web. Las presentes condiciones podrán ser actualizadas para su adecuación normativa continua.</p>
+                <p>El sitio utiliza tecnologías estándar de rendimiento web. Las presentes condiciones podrán ser actualizadas periódicamente para su adecuación operativa y normativa continua.</p>
               </div>
             </div>
 
