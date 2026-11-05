@@ -10,6 +10,17 @@ const toggleFaq = (index: number) => {
   activeFaq.value = activeFaq.value === index ? null : index
 }
 
+// Función para el efecto Spotlight en las tarjetas
+const handleMouseMove = (e: MouseEvent) => {
+  const card = e.currentTarget as HTMLElement;
+  const rect = card.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  card.style.setProperty('--mouse-x', `${x}px`);
+  card.style.setProperty('--mouse-y', `${y}px`);
+};
+
 const faqList = [
   {
     question: '¿Cuánto tiempo toma tener mi página web de Vortex lista?',
@@ -51,7 +62,7 @@ const faqList = [
 
       <section class="panels-grid">
         <!-- Tarjeta 1: Diseño 100% Personalizado -->
-        <div class="panel">
+        <div class="panel" @mousemove="handleMouseMove">
           <div class="card-image-container">
             <img src="./assets/personalizado.jpg" alt="Diseño 100% Personalizado" />
           </div>
@@ -61,7 +72,7 @@ const faqList = [
         </div>
 
         <!-- Tarjeta 2: Optimización y Velocidad -->
-        <div class="panel">
+        <div class="panel" @mousemove="handleMouseMove">
           <div class="card-image-container">
             <img src="./assets/optimizacion.jpeg" alt="Optimización y Velocidad" />
           </div>
@@ -71,7 +82,7 @@ const faqList = [
         </div>
 
         <!-- Tarjeta 3: Enfoque en Ventas -->
-        <div class="panel">
+        <div class="panel" @mousemove="handleMouseMove">
           <div class="card-image-container">
             <img src="./assets/enfoque.jpeg" alt="Enfoque en Ventas" />
           </div>
@@ -81,7 +92,7 @@ const faqList = [
         </div>
 
         <!-- Tarjeta 4: Soporte y Acompañamiento -->
-        <div class="panel">
+        <div class="panel" @mousemove="handleMouseMove">
           <div class="card-image-container">
             <img src="./assets/soporte.jpeg" alt="Soporte y Acompañamiento" />
           </div>
@@ -92,12 +103,12 @@ const faqList = [
       </section>
 
       <!-- 2. SECCIÓN ¿POR QUÉ VORTEX? (Comparativa) -->
-      <section id="comparativa" class="services-comparison">
+      <section id="comparativa" class="services-comparison" >
         <h2 class="section-title">El Antes y el Después de tu Negocio</h2>
 
-        <div class="comparison-grid">
+        <div class="comparison-grid" @mousemove="handleMouseMove">
           <!-- Columna: Sin Vortex -->
-          <div class="comparison-card without-vortex">
+          <div class="comparison-card without-vortex" @mousemove="handleMouseMove">
             <h3>Sin una Web de Vortex</h3>
             <ul>
               <li>
@@ -120,7 +131,7 @@ const faqList = [
           </div>
 
           <!-- Columna: Con Vortex -->
-          <div class="comparison-card with-vortex">
+          <div class="comparison-card with-vortex" @mousemove="handleMouseMove">
             <h3>Con una Web de Vortex</h3>
             <ul>
               <li>
@@ -145,13 +156,13 @@ const faqList = [
       </section>
 
       <!-- --- SECCIÓN: INSIGNIAS, TECNOLOGÍAS Y GARANTÍAS --- -->
-      <section class="trust-section">
+      <section class="trust-section" @mousemove="handleMouseMove">
         <h2 class="section-title">Respaldado por Tecnología de Vanguardia</h2>
         <p class="trust-subtitle">Construido bajo los más altos estándares de rendimiento y seguridad</p>
 
         <div class="trust-grid">
           <!-- Insignia 1: Rendimiento -->
-          <div class="trust-card">
+          <div class="trust-card" @mousemove="handleMouseMove">
             <div class="trust-icon">
               <i class="fa-solid fa-gauge-high"></i>
             </div>
@@ -160,7 +171,7 @@ const faqList = [
           </div>
 
           <!-- Insignia 2: Seguridad SSL -->
-          <div class="trust-card">
+          <div class="trust-card" @mousemove="handleMouseMove">
             <div class="trust-icon">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
@@ -169,7 +180,7 @@ const faqList = [
           </div>
 
           <!-- Insignia 3: Stack Tecnológico -->
-          <div class="trust-card">
+          <div class="trust-card" @mousemove="handleMouseMove">
             <div class="trust-icon">
               <i class="fa-solid fa-code"></i>
             </div>
@@ -180,7 +191,7 @@ const faqList = [
           </div>
 
           <!-- Insignia 4: Adaptabilidad -->
-          <div class="trust-card">
+          <div class="trust-card" @mousemove="handleMouseMove">
             <div class="trust-icon">
               <i class="fa-solid fa-mobile-screen-button"></i>
             </div>
@@ -192,7 +203,7 @@ const faqList = [
 
       <!-- 3. SECCIÓN DE SERVICIOS -->
       <section id="servicios" class="services-section">
-        <div class="services-header">
+        <div class="services-header" @mousemove="handleMouseMove">
           <span class="badge-subtitle">NUESTRAS SOLUCIONES</span>
           <h2>Nuestros Servicios</h2>
           <p>Soluciones digitales diseñadas con precisión para llevar tu negocio al siguiente nivel de conversión y rentabilidad.</p>
@@ -200,7 +211,7 @@ const faqList = [
 
         <div class="services-grid">
           <!-- Servicio 1 -->
-          <div class="service-card">
+          <div class="service-card" @mousemove="handleMouseMove">
             <div class="service-icon-wrapper">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
@@ -209,7 +220,7 @@ const faqList = [
           </div>
 
           <!-- Servicio 2 -->
-          <div class="service-card">
+          <div class="service-card" @mousemove="handleMouseMove">
             <div class="service-icon-wrapper">
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -218,7 +229,7 @@ const faqList = [
           </div>
 
           <!-- Servicio 3 -->
-          <div class="service-card">
+          <div class="service-card" @mousemove="handleMouseMove">
             <div class="service-icon-wrapper">
               <i class="fa-solid fa-rotate"></i>
             </div>
@@ -229,11 +240,11 @@ const faqList = [
       </section>
 
       <!-- Sección de Preguntas Frecuentes (FAQ) -->
-      <section class="faq-section">
+      <section class="faq-section" @mousemove="handleMouseMove">
         <h2 class="section-title">Preguntas Frecuentes</h2>
         <p class="faq-subtitle">Resolvemos las dudas más comunes para que tomes la mejor decisión</p>
 
-        <div class="faq-container">
+        <div class="faq-container" @mousemove="handleMouseMove">
           <div v-for="(item, index) in faqList" :key="index" class="faq-item" :class="{ active: activeFaq === index }">
             <button class="faq-question" @click="toggleFaq(index)">
               <span>{{ item.question }}</span>
@@ -249,25 +260,25 @@ const faqList = [
       </section>
 
       <!-- SECCIÓN: FILOSOFÍA Y COMPROMISO -->
-      <section class="philosophy-section">
+      <section class="philosophy-section" @mousemove="handleMouseMove">
         <h2 class="section-title">Nuestra Promesa de Excelencia</h2>
         <p class="philosophy-subtitle">Rigor técnico y cumplimiento absoluto en cada etapa de desarrollo</p>
 
-        <div class="philosophy-grid">
-          <div class="philosophy-card">
+        <div class="philosophy-grid" @mousemove="handleMouseMove">
+          <div class="philosophy-card" @mousemove="handleMouseMove">
             <div class="philosophy-number">01</div>
             <h3>Puntualidad Estricta</h3>
             <p>Entregas rigurosas en los plazos acordados, respetando el tiempo de tu negocio sin excepciones.</p>
           </div>
 
-          <div class="philosophy-card">
+          <div class="philosophy-card" @mousemove="handleMouseMove">
             <div class="philosophy-number">02</div>
             <h3>Soporte Dedicado</h3>
             <p>Acompañamiento continuo y atención personalizada para garantizar el funcionamiento impecable de tu
               plataforma.</p>
           </div>
 
-          <div class="philosophy-card">
+          <div class="philosophy-card" @mousemove="handleMouseMove">
             <div class="philosophy-number">03</div>
             <h3>Precisión Milimétrica</h3>
             <p>Código limpio, optimizado y diseñado bajo los más altos estándares de calidad estética y funcional.</p>
@@ -278,14 +289,14 @@ const faqList = [
       <!-- SECCIÓN: INFORMACIÓN LEGAL Y TÉRMINOS -->
        
       <!-- SECCIÓN: INFORMACIÓN LEGAL Y TÉRMINOS -->
-      <section id="terminos" class="legal-section">
+      <section id="terminos" class="legal-section" @mousemove="handleMouseMove">
         <div class="legal-header">
           <span class="badge-subtitle">TRANSPARENCIA Y CONFIANZA</span>
           <h2>Información Legal del Sitio</h2>
           <p class="legal-subtitle">Términos, condiciones de uso y directrices de privacidad de Vortex Web.</p>
         </div>
 
-        <div class="legal-card-container">
+        <div class="legal-card-container" @mousemove="handleMouseMove">
           <!-- Aviso Provisional -->
           <div class="legal-provisional-banner">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -297,8 +308,8 @@ const faqList = [
           <!-- Grid o lista estructurada de puntos -->
           <div class="legal-grid">
             
-            <div class="legal-item">
-              <div class="legal-number">01</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">01</div>
               <div class="legal-text">
                 <h3>Identificación y Contacto</h3>
                 <p>Sitio operado por <strong>VORTEX DIGITAL & CONTROL SpA</strong>, RUT <strong>78.425.072-5</strong>, con domicilio en Santiago, Chile.</p>
@@ -306,40 +317,40 @@ const faqList = [
               </div>
             </div>
 
-            <div class="legal-item">
-              <div class="legal-number">02</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">02</div>
               <div class="legal-text">
                 <h3>Uso y Alcance de los Servicios</h3>
                 <p>Canal informativo y de captación de requerimientos. Los servicios publicados no generan transacciones automáticas en línea; su contratación se formaliza mediante la aceptación previa de propuestas comerciales o presupuestos específicos acordados con el cliente.</p>
               </div>
             </div>
 
-            <div class="legal-item">
-              <div class="legal-number">03</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">03</div>
               <div class="legal-text">
                 <h3>Datos Personales y Privacidad</h3>
                 <p>La información recopilada a través de formularios o canales de contacto (como nombre, correo o teléfono) se utiliza exclusivamente para responder solicitudes, cotizaciones y coordinar proyectos, garantizando absoluta confidencialidad.</p>
               </div>
             </div>
 
-            <div class="legal-item">
-              <div class="legal-number">04</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">04</div>
               <div class="legal-text">
                 <h3>Proveedores y Seguridad</h3>
                 <p>Infraestructura tecnológica optimizada bajo estándares modernos de desarrollo (Vue 3, Vite, TypeScript) y protocolos de seguridad SSL para proteger la navegación de los usuarios.</p>
               </div>
             </div>
 
-            <div class="legal-item">
-              <div class="legal-number">05</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">05</div>
               <div class="legal-text">
                 <h3>Derechos del Usuario</h3>
                 <p>Los usuarios pueden solicitar en cualquier momento la revisión, actualización o eliminación de sus datos de contacto escribiendo directamente a nuestro correo oficial.</p>
               </div>
             </div>
 
-            <div class="legal-item">
-              <div class="legal-number">06</div>
+            <div class="legal-item" @mousemove="handleMouseMove">
+              <div class="legal-number" @mousemove="handleMouseMove">06</div>
               <div class="legal-text">
                 <h3>Cookies y Actualizaciones</h3>
                 <p>El sitio utiliza tecnologías estándar de rendimiento web. Las presentes condiciones podrán ser actualizadas periódicamente para su adecuación operativa y normativa continua.</p>
@@ -358,16 +369,23 @@ const faqList = [
 </template>
 
 <style>
-/* Estilos globales */
+/* Estilos globales y degradado de fondo animado */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('./assets/image.png');
-  background-size: cover;
+  background: linear-gradient(135deg, rgba(11, 37, 69, 0.85), rgba(0, 119, 182, 0.75)), url('./assets/image.png');
+  background-size: 200% 200%;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  animation: gradientShift 20s ease infinite;
 }
 
 .main-content {
@@ -377,21 +395,36 @@ body {
 }
 
 .hero {
-  background: rgba(11, 37, 69, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(11, 37, 69, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   color: #ffffff;
-  padding: 50px 20px;
-  border-radius: 16px;
+  padding: 60px 20px;
+  border-radius: 20px;
   text-align: center;
   margin-bottom: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo sutil superior en el Hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
 }
 
 .hero h2 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  font-size: 1.8rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 1.9rem;
   max-width: 800px;
   margin: 0 auto 30px auto;
   line-height: 1.4;
@@ -401,16 +434,20 @@ body {
   background-color: #134074;
   color: white;
   border: 2px solid #8da9c4;
-  padding: 12px 30px;
+  padding: 14px 32px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-  background-color: #0b2545;
+  background-color: #0077b6;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
 }
 
 /* --- ESTILOS REFINADOS PARA LOS PANELES E IMÁGENES --- */
@@ -421,8 +458,8 @@ body {
 }
 
 .panel {
-  background: rgba(255, 255, 255, 0.90);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 24px 20px;
   border-radius: 16px;
   text-align: center;
@@ -431,9 +468,10 @@ body {
 }
 
 .panel:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 119, 182, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 45px rgba(0, 119, 182, 0.2);
+  border-color: rgba(0, 119, 182, 0.4);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .card-image-container {
@@ -456,7 +494,7 @@ body {
 }
 
 .panel:hover .card-image-container img {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .panel h3 {
@@ -498,11 +536,12 @@ body {
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .comparison-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .comparison-card h3 {
@@ -596,7 +635,7 @@ body {
 
 .trust-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.2);
 }
 
 .trust-icon {
@@ -610,12 +649,13 @@ body {
   justify-content: center;
   font-size: 22px;
   margin: 0 auto 15px auto;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .trust-card:hover .trust-icon {
   background-color: #0077b6;
   color: #ffffff;
+  transform: scale(1.1);
 }
 
 .trust-card h3 {
@@ -776,11 +816,12 @@ body {
 
 .services-section {
   padding: 80px 20px;
-  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.98) 100%);
   position: relative;
   z-index: 1;
   margin: 60px 0;
   border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 .services-header {
@@ -875,6 +916,12 @@ body {
   font-size: 1.4rem;
   color: #38bdf8;
   margin-bottom: 22px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrapper {
+  transform: scale(1.1);
+  background: rgba(56, 189, 248, 0.25);
 }
 
 /* =========================================
@@ -994,17 +1041,87 @@ body {
   margin: 0 0 10px 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
-
-.badge-subtitle {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #206c8c;
-  background: rgba(56, 189, 248, 0.15);
-  padding: 6px 14px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  margin-bottom: 12px; /* Separa perfectamente la pastilla del título principal */
+/* --- EFECTO SPOTLIGHT INTERACTIVO PARA TARJETAS --- */
+.panel, .service-card, .trust-card, .philosophy-card, .comparison-card {
+  position: relative;
+  overflow: hidden;
 }
+
+/* Capa del brillo que sigue al mouse */
+.panel::before, .service-card::before, .trust-card::before, .philosophy-card::before, .comparison-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.12),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mostrar el brillo al pasar el mouse por encima */
+.panel:hover::before, .service-card:hover::before, .trust-card:hover::before, .philosophy-card:hover::before, .comparison-card:hover::before {
+  opacity: 1;
+}
+
+/* Asegurar que el contenido interno de la tarjeta esté por encima del brillo */
+.panel > *, .service-card > *, .trust-card > *, .philosophy-card > *, .comparison-card > * {
+  position: relative;
+  z-index: 2;
+}
+/*  MICROINTERACCIONES EN BOTONES E ICONOS --- */
+
+/* 1. Animación de pulso suave para el botón de WhatsApp */
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 119, 182, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 119, 182, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 119, 182, 0);
+  }
+}
+
+.cta-button {
+  animation: softPulse 3s infinite;
+}
+
+.cta-button:hover {
+  animation: none; /* Detiene el pulso al hacer hover para dar paso a la elevación */
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* 2. Microinteracción en iconos generales dentro de tarjetas */
+.panel i, 
+.service-card i, 
+.trust-card i, 
+.philosophy-card i {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.panel:hover i, 
+.service-card:hover i, 
+.trust-card:hover i, 
+.philosophy-card:hover i {
+  transform: scale(1.15) rotate(3deg);
+}
+
+/* 3. Transición fluida para las imágenes de las tarjetas de servicios/paneles */
+.card-image-container img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel:hover .card-image-container img {
+  transform: scale(1.08);
+}
+
 </style>
