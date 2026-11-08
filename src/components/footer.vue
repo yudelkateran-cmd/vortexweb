@@ -45,7 +45,7 @@
           </li>
           <li>
             <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:camilito24520@gmail.com">camilito24520@gmail.com</a>
+            <a href="mailto:contacto@vortexdigitalycontrol.com">contacto@vortexdigitalycontrol.com</a>
           </li>
         </ul>
       </div>
