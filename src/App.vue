@@ -313,7 +313,7 @@ const faqList = [
               <div class="legal-text">
                 <h3>Identificación y Contacto</h3>
                 <p>Sitio operado por <strong>VORTEX DIGITAL & CONTROL SpA</strong>, RUT <strong>78.425.072-5</strong>, con domicilio en Santiago, Chile.</p>
-                <p class="legal-detail"><i class="fa-solid fa-envelope"></i> camilito24520@gmail.com | <i class="fa-brands fa-whatsapp"></i> +56 9 9597 0968</p>
+                <p class="legal-detail"><i class="fa-solid fa-envelope"></i> contacto@vortexdigitalycontrol.com | <i class="fa-brands fa-whatsapp"></i> +56 9 9597 0968</p>
               </div>
             </div>
 
